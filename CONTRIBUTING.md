@@ -1,36 +1,39 @@
 # Contributing to OpenCode Plugin Marketplace
 
-Thank you for your interest in contributing to the OpenCode Plugin Marketplace! This document explains how to add or update plugins.
+Thank you for your interest in contributing to the OpenCode Plugin Marketplace! This document provides step-by-step instructions for adding or updating plugins.
 
-## How to Contribute a Plugin
+## How to Add a Plugin
 
-### 1. Fork the Repository
+### Step 1: Fork and Clone
 
-Fork this repository to your GitHub account and clone it locally.
+1. **Fork this repository** by clicking the "Fork" button on GitHub
+2. **Clone your fork** locally:
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/opencode-plugin-marketplace.git
 cd opencode-plugin-marketplace
 ```
 
-### 2. Create a Plugin JSON File
+### Step 2: Create Your Plugin File
 
-Create a new file in the `plugins/` directory named `<your-plugin-name>.plugin.json`.
+1. **Navigate to the `plugins/` directory**
+2. **Create a new file** named exactly: `your-plugin-name.plugin.json`
+   - Use **lowercase** letters only
+   - Use **hyphens** to separate words (no spaces or underscores)
+   - Must end with `.plugin.json`
+   - Example: `opencode-wakatime.plugin.json`
 
-**Important naming rules:**
-- Filename must match the `name` field in the JSON
-- Use lowercase letters, numbers, and hyphens only
-- Example: `my-awesome-plugin.plugin.json`
+**Critical**: The filename must exactly match the `name` field inside the JSON (see Step 3).
 
-### 3. Fill Out Plugin Information
+### Step 3: Fill Out Required Fields
 
-Use this template and fill in your plugin details:
+Copy this template into your new file and replace ALL placeholder values:
 
 ```json
 {
   "name": "your-plugin-name",
-  "displayName": "Your Plugin Name",
-  "description": "A clear, concise description of what your plugin does (10-500 characters).",
+  "displayName": "Your Plugin Display Name",
+  "description": "A clear description of what your plugin does. Must be between 10-500 characters.",
   "categories": ["Development", "Utilities"],
   "authors": [
     {
@@ -40,127 +43,257 @@ Use this template and fill in your plugin details:
   ],
   "license": "MIT",
   "links": {
-    "repository": "https://github.com/yourusername/your-plugin",
-    "homepage": "https://your-plugin-website.com",
-    "documentation": "https://docs.your-plugin.com"
+    "repository": "https://github.com/yourusername/your-plugin-repo"
   },
   "opencode": {
-    "minimumVersion": "1.0.0",
-    "maximumVersion": "2.0.0"
+    "minimumVersion": "1.0.0"
   },
   "installation": {
     "summary": "Brief installation summary (10-200 characters)",
-    "markdown": "## Installation\n\n1. Step one\n2. Step two\n3. Step three"
-  },
-  "usage": {
-    "markdown": "## Usage\n\nHow to use your plugin..."
+    "markdown": "## Installation\n\n```bash\nnpm install your-plugin\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"your-plugin\"]\n}\n```"
   },
   "maintained": true,
-  "lastUpdated": "2026-01-10"
+  "lastUpdated": "2026-01-11"
 }
 ```
 
-### 4. Available Categories
+### Step 4: Understand Required vs Optional Fields
 
-Choose one or more from:
-- Development
-- Productivity
-- UI/UX
-- Testing
-- Debugging
-- Documentation
-- Integration
-- Utilities
-- AI/ML
-- Other
+**Required Fields** (must be present):
+- `name` - Lowercase, alphanumeric, hyphens only (must match filename)
+- `displayName` - Human-readable name shown in marketplace
+- `description` - 10-500 characters describing your plugin
+- `categories` - Array with at least one category (see list below)
+- `authors` - Array with at least one author object (`name` and `url`)
+- `license` - License identifier (e.g., "MIT", "Apache-2.0", "GPL-3.0")
+- `links.repository` - URL to your plugin's repository
+- `opencode.minimumVersion` - Minimum OpenCode version (format: "X.Y.Z")
+- `installation.summary` - Brief summary (10-200 characters)
+- `installation.markdown` - Detailed installation instructions with Markdown
+- `maintained` - `true` or `false`
+- `lastUpdated` - Today's date in format: "YYYY-MM-DD"
 
-### 5. Markdown Guidelines
+**Optional Fields**:
+- `links.homepage` - Plugin website URL
+- `links.documentation` - Documentation URL  
+- `opencode.maximumVersion` - Maximum compatible version
+- `usage.markdown` - Usage instructions with Markdown
 
-You can use Markdown in `installation.markdown` and `usage.markdown` fields:
+### Step 5: Choose Valid Categories
 
+Select **one or more** categories from this exact list:
+- `Development`
+- `Productivity`
+- `UI/UX`
+- `Testing`
+- `Debugging`
+- `Documentation`
+- `Integration`
+- `Utilities`
+- `Providers`
+- `Other`
+
+**Example**: `"categories": ["Productivity", "Integration"]`
+
+### Step 6: Format Markdown Content
+
+When writing `installation.markdown` and `usage.markdown`, use `\n` for newlines:
+
+**Supported Markdown syntax**:
 - Headings: `## Heading`, `### Subheading`
-- Lists: `- Item` or `1. Item`
+- Lists: `- Item` or `1. Item`  
 - Code blocks: ` ```language\ncode\n``` `
 - Links: `[text](url)`
-- **Bold** and *italic* text
-- No raw HTML allowed (it will be sanitized)
+- **Bold** (`**text**`) and *italic* (`*text*`)
+- Raw HTML is not allowed (will be sanitized)
 
-### 6. Validate Your Plugin
+**Example**:
+```json
+"markdown": "## Installation\n\n```bash\nnpm install my-plugin\n```\n\nThen restart OpenCode."
+```
 
-Install dependencies and run validation:
+### Step 7: Validate Your Plugin Locally
+
+**This step is critical** - validate before submitting:
 
 ```bash
+# Navigate to scripts directory
 cd scripts
+
+# Install validation dependencies (first time only)
 npm install
+
+# Run validation
 npm run validate
 ```
 
-Fix any errors reported by the validator.
+**Expected output if valid**:
+```
+✅ your-plugin-name.plugin.json - Valid
+✅ All plugins are valid!
+```
 
-### 7. Commit and Push
+**If you see errors**:
+- Read the error message carefully
+- Fix the issues in your JSON file
+- Run `npm run validate` again
+- Repeat until all errors are resolved
+
+**Common validation errors**:
+- Filename doesn't match `name` field
+- Missing required fields
+- Invalid category name
+- Invalid date format (must be YYYY-MM-DD)
+- Description too short (< 10 chars) or too long (> 500 chars)
+- Invalid URL format
+
+### Step 8: Commit Your Plugin
 
 ```bash
+# Add your plugin file
 git add plugins/your-plugin-name.plugin.json
-git commit -m "Add your-plugin-name to marketplace"
+
+# Commit with descriptive message
+git commit -m "Add your-plugin-name plugin"
+
+# Push to your fork
 git push origin main
 ```
 
-### 8. Create a Pull Request
+### Step 9: Submit a Pull Request
 
-1. Go to your fork on GitHub
-2. Click "New Pull Request"
-3. Provide a clear title: "Add [Plugin Name]"
-4. Describe your plugin in the PR description
-5. Submit the PR
+1. Go to your fork on GitHub: `https://github.com/YOUR_USERNAME/opencode-plugin-marketplace`
+2. Click the **"Contribute"** button, then **"Open pull request"**
+3. **Title**: Use format: `Add [Your Plugin Display Name]`
+4. **Description**: Briefly describe what your plugin does
+5. Click **"Create pull request"**
 
-### 9. Automated Checks
+### Step 10: Wait for Automated Validation
 
-Our CI will automatically:
-- Validate your JSON against the schema
-- Check filename matches the plugin name
-- Ensure no duplicate plugin names
+Our CI will automatically run when you submit the PR and check:
+- ✅ JSON is valid and matches schema
+- ✅ Filename matches the `name` field  
+- ✅ No duplicate plugin names
+- ✅ All required fields are present
 
-If validation fails, fix the issues and push again.
+**If CI fails**: 
+- Check the error details in the GitHub Actions tab
+- Fix the issues in your fork
+- Push the changes (the PR will update automatically)
 
-### 10. Review and Merge
+**If CI passes**:
+- Maintainers will review your submission
+- You may be asked to make changes
+- Once approved, your plugin will be merged and appear on the live marketplace!
 
-Maintainers will review your PR and may request changes. Once approved and merged, your plugin will automatically appear on the marketplace!
+---
 
 ## Updating an Existing Plugin
 
-To update a plugin:
+To update information for a plugin already in the marketplace:
 
-1. Fork and clone the repository
-2. Edit the existing plugin JSON file in `plugins/`
-3. Update the `lastUpdated` field to today's date
-4. Follow steps 6-10 above
+### Step 1: Fork and Clone (if you haven't already)
 
-## Plugin Schema
+```bash
+git clone https://github.com/YOUR_USERNAME/opencode-plugin-marketplace.git
+cd opencode-plugin-marketplace
+```
 
-All plugins must validate against `schema/plugin.schema.json`. Required fields:
+### Step 2: Find and Edit the Plugin File
 
-- `name` - Unique identifier (lowercase, alphanumeric, hyphens)
-- `displayName` - Human-readable name
-- `description` - 10-500 characters
-- `categories` - At least one category
-- `authors` - At least one author with name and URL
-- `license` - SPDX license identifier
-- `links.repository` - GitHub or Git repository URL
-- `opencode.minimumVersion` - Minimum OpenCode version
-- `installation.summary` and `installation.markdown`
-- `maintained` - Boolean indicating active maintenance
-- `lastUpdated` - Date in YYYY-MM-DD format
+1. Navigate to `plugins/` directory
+2. Find your plugin file: `your-plugin-name.plugin.json`
+3. Make your changes
 
-Optional fields:
-- `links.homepage` - Plugin website
-- `links.documentation` - Documentation URL
-- `opencode.maximumVersion` - Maximum compatible version
-- `usage.markdown` - Usage instructions
+### Step 3: Update the Date
 
-## Questions?
+**Important**: Change `lastUpdated` to today's date:
 
-Open an issue on GitHub if you need help or have questions about contributing.
+```json
+"lastUpdated": "2026-01-11"
+```
+
+### Step 4: Validate, Commit, and Submit PR
+
+Follow Steps 7-10 from "How to Add a Plugin" above.
+
+---
+
+## Real-World Example
+
+Here's a complete, real example from the marketplace:
+
+**File**: `plugins/opencode-wakatime.plugin.json`
+
+```json
+{
+  "name": "opencode-wakatime",
+  "displayName": "OpenCode WakaTime",
+  "description": "Track OpenCode usage with WakaTime - monitor coding time, track productivity metrics, and analyze your development patterns.",
+  "categories": ["Productivity", "Integration"],
+  "authors": [
+    {
+      "name": "angristan",
+      "url": "https://github.com/angristan"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/angristan/opencode-wakatime"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm and configure with your WakaTime API key to start tracking.",
+    "markdown": "## Installation\n\n```bash\nnpm install opencode-wakatime\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"opencode-wakatime\"]\n}\n```\n\nConfigure your WakaTime API key in the settings.\n\nRestart OpenCode to begin tracking."
+  },
+  "usage": {
+    "markdown": "## Usage\n\nOnce installed and configured:\n\n### Features\n\n- **Automatic Tracking**: All OpenCode sessions tracked automatically\n- **Detailed Metrics**: Time spent per project, language, and file\n"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-11"
+}
+```
+
+---
+
+## Schema Reference
+
+All plugins must validate against `schema/plugin.schema.json`.
+
+### Complete Field Reference
+
+| Field | Type | Required | Validation |
+|-------|------|----------|------------|
+| `name` | string | ✅ | Lowercase, alphanumeric, hyphens only |
+| `displayName` | string | ✅ | At least 1 character |
+| `description` | string | ✅ | 10-500 characters |
+| `categories` | array | ✅ | At least 1 valid category |
+| `authors` | array | ✅ | At least 1 author with `name` and `url` |
+| `license` | string | ✅ | SPDX license identifier |
+| `links.repository` | string | ✅ | Valid URI |
+| `links.homepage` | string | ❌ | Valid URI |
+| `links.documentation` | string | ❌ | Valid URI |
+| `opencode.minimumVersion` | string | ✅ | Semver format: "X.Y.Z" |
+| `opencode.maximumVersion` | string | ❌ | Semver format: "X.Y.Z" |
+| `installation.summary` | string | ✅ | 10-200 characters |
+| `installation.markdown` | string | ✅ | At least 10 characters |
+| `usage.markdown` | string | ❌ | Markdown content |
+| `maintained` | boolean | ✅ | `true` or `false` |
+| `lastUpdated` | string | ✅ | Format: "YYYY-MM-DD" |
+
+---
+
+## Getting Help
+
+- **Questions?** Open an issue on [GitHub](https://github.com/Tommertom/opencoder-marketplace-vibed/issues)
+- **Found a bug?** Report it on GitHub
+- **Need clarification?** Ask in the issue tracker
 
 ## Code of Conduct
 
-Be respectful and constructive. We're all here to build great tools together.
+- Be respectful and constructive
+- Provide accurate information about your plugin
+- Keep your plugin information up to date
+- We're all here to build great tools together!
