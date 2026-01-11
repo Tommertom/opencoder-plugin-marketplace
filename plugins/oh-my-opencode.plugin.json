@@ -1,0 +1,28 @@
+{
+  "name": "oh-my-opencode",
+  "displayName": "Oh My OpenCode",
+  "description": "The Best Agent Harness. Meet Sisyphus: The Batteries-Included Agent that codes like you - a comprehensive framework for enhanced OpenCode agent capabilities.",
+  "categories": ["Development", "Productivity"],
+  "authors": [
+    {
+      "name": "code-yeongyu",
+      "url": "https://github.com/code-yeongyu"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/code-yeongyu/oh-my-opencode"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm to supercharge OpenCode with advanced agent capabilities and Sisyphus framework.",
+    "markdown": "## Installation\n\n```bash\nnpm install oh-my-opencode\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"oh-my-opencode\"]\n}\n```\n\nRestart OpenCode to activate the enhanced agent harness."
+  },
+  "usage": {
+    "markdown": "## Usage\n\n### Sisyphus Agent\n\nA batteries-included agent that codes like you:\n\n- **Smart Coding**: Understands your coding style\n- **Context Aware**: Maintains project context\n- **Autonomous**: Handles complex multi-step tasks\n- **Reliable**: Persistent and resilient execution\n\n### Features\n\n- **Enhanced Prompts**: Pre-configured optimal prompts\n- **Tool Extensions**: Additional capabilities for the agent\n- **Workflow Automation**: Complex task orchestration\n- **Best Practices**: Built-in coding standards\n\n### Agent Harness\n\nFramework for building and managing agents:\n\n1. **Agent Creation**: Define custom agents\n2. **Task Management**: Handle complex workflows\n3. **State Persistence**: Resume interrupted tasks\n4. **Error Handling**: Robust failure recovery\n\n### Configuration\n\n```json\n{\n  \"ohMyOpencode\": {\n    \"agent\": \"sisyphus\",\n    \"autoResume\": true,\n    \"maxIterations\": 50\n  }\n}\n```"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-11"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "opencode-scheduler",
+  "displayName": "OpenCode Scheduler",
+  "description": "OpenCode plugin for scheduling recurring jobs using launchd (Mac) or systemd (Linux) - automate OpenCode tasks on a schedule.",
+  "categories": ["Productivity", "Utilities"],
+  "authors": [
+    {
+      "name": "different-ai",
+      "url": "https://github.com/different-ai"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/different-ai/opencode-scheduler"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm to enable scheduled task execution with system schedulers.",
+    "markdown": "## Installation\n\n**Prerequisites**: \n- macOS: launchd (built-in)\n- Linux: systemd (usually pre-installed)\n\n```bash\nnpm install opencode-scheduler\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"opencode-scheduler\"]\n}\n```\n\nRestart OpenCode to enable scheduling features."
+  },
+  "usage": {
+    "markdown": "## Usage\n\n### Schedule Tasks\n\nCreate recurring OpenCode jobs:\n\n```bash\n# Daily backup at 2 AM\nopencode-schedule add --task=\"backup-project\" --cron=\"0 2 * * *\"\n\n# Hourly code quality checks\nopencode-schedule add --task=\"lint-check\" --interval=\"1h\"\n\n# Weekly dependency updates\nopencode-schedule add --task=\"update-deps\" --cron=\"0 0 * * 0\"\n```\n\n### Features\n\n- **Cron Syntax**: Standard cron expressions\n- **Interval Syntax**: Simple time intervals (1h, 30m)\n- **Native Integration**: Uses system schedulers\n- **Reliable**: System-level scheduling\n- **Persistent**: Survives reboots\n\n### Use Cases\n\n1. **Automated Testing**: Run tests on schedule\n2. **Code Quality**: Regular linting and formatting\n3. **Dependency Updates**: Check for updates\n4. **Backups**: Automated project backups\n5. **Reports**: Generate periodic reports\n\n### Management Commands\n\n```bash\n# List scheduled jobs\nopencode-schedule list\n\n# Remove a job\nopencode-schedule remove backup-project\n\n# View job logs\nopencode-schedule logs backup-project\n```\n\n### Configuration\n\n```json\n{\n  \"scheduler\": {\n    \"logsPath\": \"~/.opencode/scheduler-logs\",\n    \"maxLogSize\": \"10MB\",\n    \"timezone\": \"America/New_York\"\n  }\n}\n```"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-11"
+}

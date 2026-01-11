@@ -1,0 +1,28 @@
+{
+  "name": "opencode-zellij-namer",
+  "displayName": "OpenCode Zellij Namer",
+  "description": "AI-powered dynamic Zellij session naming plugin for OpenCode - automatically generates meaningful session names based on project context and activity.",
+  "categories": ["Productivity"],
+  "authors": [
+    {
+      "name": "24601",
+      "url": "https://github.com/24601"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/24601/opencode-zellij-namer"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm to enable AI-powered Zellij session naming.",
+    "markdown": "## Installation\n\n**Prerequisites**: Zellij terminal multiplexer must be installed\n\n```bash\nnpm install opencode-zellij-namer\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"opencode-zellij-namer\"]\n}\n```\n\nRestart OpenCode to enable automatic session naming."
+  },
+  "usage": {
+    "markdown": "## Usage\n\n### Automatic Naming\n\nThe plugin uses AI to generate meaningful Zellij session names:\n\n**Examples**:\n- `auth-refactor-2026-01-11`\n- `api-bug-fix-user-endpoint`\n- `feature-dark-mode-ui`\n\n### Features\n\n- **Context Aware**: Names based on files and changes\n- **Dynamic**: Updates as work progresses\n- **Descriptive**: Clear indication of session purpose\n- **Organized**: Easy to find and resume sessions\n\n### How It Works\n\n1. Analyzes your current work\n2. Identifies main task or feature\n3. Generates descriptive name\n4. Updates Zellij session name\n\n### Benefits\n\n- **Session Management**: Quickly identify sessions\n- **Context Switching**: Know what each session is for\n- **Organization**: Better workspace organization\n- **Resume Work**: Easily find previous sessions\n\n### Configuration\n\n```json\n{\n  \"zellijNamer\": {\n    \"autoUpdate\": true,\n    \"includeDate\": true,\n    \"maxLength\": 50\n  }\n}\n```"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-08"
+}

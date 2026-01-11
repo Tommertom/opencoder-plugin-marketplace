@@ -94,6 +94,19 @@ body {
   color: var(--color-text-secondary);
 }
 
+.header .disclaimer {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header .disclaimer small {
+  font-size: inherit;
+}
+
 .container {
   display: flex;
   flex: 1;
@@ -574,6 +587,13 @@ body {
 .footer a:hover {
   color: var(--color-accent-hover);
   text-decoration: underline;
+}
+
+.footer-disclaimer {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  opacity: 0.8;
 }
 
 /* Detail Modal Styles */

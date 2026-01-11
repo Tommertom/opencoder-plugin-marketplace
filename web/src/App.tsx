@@ -28,6 +28,11 @@ function App() {
       <header class="header">
         <h1>OpenCode Plugin Marketplace</h1>
         <p>Discover and contribute plugins for OpenCode</p>
+        <p class="disclaimer">
+          <small>
+            This is an independent, community-driven project and is not affiliated with, endorsed by, or officially connected to OpenCode (opencode.ai) or Anomaly Co.
+          </small>
+        </p>
       </header>
 
       <div class="container">
@@ -94,6 +99,9 @@ function App() {
             GitHub repository
           </a>{' '}
           and submit a PR with your plugin JSON file.
+        </p>
+        <p class="footer-disclaimer">
+          This is an independent, community-driven project and is not affiliated with, endorsed by, or officially connected to OpenCode (opencode.ai) or Anomaly Co.
         </p>
       </footer>
     </div>

@@ -1,0 +1,28 @@
+{
+  "name": "opencode-helicone-session",
+  "displayName": "OpenCode Helicone Session",
+  "description": "Integration plugin for Helicone session tracking and monitoring in OpenCode to analyze LLM API usage, costs, and performance metrics.",
+  "categories": ["Integration"],
+  "authors": [
+    {
+      "name": "H2Shami",
+      "url": "https://github.com/H2Shami"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/H2Shami/opencode-helicone-session"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm and configure Helicone API key in OpenCode settings.",
+    "markdown": "## Installation\n\n```bash\nnpm install opencode-helicone-session\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"opencode-helicone-session\"]\n}\n```\n\nConfigure your Helicone API key in the OpenCode settings.\n\nRestart OpenCode to activate the plugin."
+  },
+  "usage": {
+    "markdown": "## Usage\n\nOnce installed and configured, the plugin automatically tracks all OpenCode sessions through Helicone, providing:\n\n- Real-time cost monitoring\n- Performance analytics\n- Request logging\n- Usage patterns analysis\n\nView your analytics at [helicone.ai](https://helicone.ai)"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-02"
+}

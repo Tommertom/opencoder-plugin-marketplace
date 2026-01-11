@@ -1,0 +1,28 @@
+{
+  "name": "opencode-type-inject",
+  "displayName": "OpenCode Type Inject",
+  "description": "Auto-injects TypeScript types into file reads and provides type lookup tools to help LLMs understand your codebase's type structure better.",
+  "categories": ["Development", "Utilities"],
+  "authors": [
+    {
+      "name": "nick-vi",
+      "url": "https://github.com/nick-vi"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/nick-vi/opencode-type-inject"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm and enable in OpenCode TypeScript projects.",
+    "markdown": "## Installation\n\n```bash\nnpm install opencode-type-inject\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"opencode-type-inject\"]\n}\n```\n\nRestart OpenCode to enable automatic type injection."
+  },
+  "usage": {
+    "markdown": "## Usage\n\nThe plugin automatically:\n\n1. **Injects Types**: When the LLM reads TypeScript files, type definitions are automatically injected into the context\n2. **Type Lookup**: Provides tools for the LLM to query type information\n3. **Better Understanding**: Helps the LLM make more type-aware code suggestions\n\nNo manual configuration needed - just install and go!"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-10"
+}

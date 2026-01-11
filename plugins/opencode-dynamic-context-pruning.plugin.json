@@ -1,0 +1,28 @@
+{
+  "name": "opencode-dynamic-context-pruning",
+  "displayName": "OpenCode Dynamic Context Pruning",
+  "description": "Dynamic context pruning plugin for OpenCode - intelligently manages conversation context to optimize token usage and reduce API costs while maintaining quality.",
+  "categories": ["Utilities"],
+  "authors": [
+    {
+      "name": "Opencode-DCP",
+      "url": "https://github.com/Opencode-DCP"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/Opencode-DCP/opencode-dynamic-context-pruning"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm to enable intelligent context management and token optimization.",
+    "markdown": "## Installation\n\n```bash\nnpm install opencode-dynamic-context-pruning\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"opencode-dynamic-context-pruning\"]\n}\n```\n\nRestart OpenCode to enable automatic context optimization."
+  },
+  "usage": {
+    "markdown": "## Usage\n\nThe plugin automatically:\n\n### Smart Context Management\n\n- **Prunes Old Messages**: Removes less relevant conversation history\n- **Preserves Important Context**: Keeps critical information\n- **Token Optimization**: Reduces API costs by managing context size\n- **Quality Maintenance**: Ensures responses remain relevant\n\n### Configuration\n\nCustomize pruning behavior in settings:\n\n```json\n{\n  \"contextPruning\": {\n    \"maxTokens\": 8000,\n    \"strategy\": \"intelligent\",\n    \"preserveRecent\": 5\n  }\n}\n```\n\n### Benefits\n\n- Lower API costs\n- Faster responses\n- Better conversation flow\n- Automatic optimization"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-11"
+}

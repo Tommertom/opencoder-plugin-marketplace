@@ -1,0 +1,28 @@
+{
+  "name": "opencode-openai-codex-auth",
+  "displayName": "OpenCode OpenAI Codex Auth",
+  "description": "OAuth authentication plugin for personal coding assistance with ChatGPT Plus/Pro subscriptions - uses OpenAI's official authentication method.",
+  "categories": ["Providers", "Integration"],
+  "authors": [
+    {
+      "name": "numman-ali",
+      "url": "https://github.com/numman-ali"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/numman-ali/opencode-openai-codex-auth"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm and authenticate with your OpenAI/ChatGPT Plus account.",
+    "markdown": "## Installation\n\n```bash\nnpm install opencode-openai-codex-auth\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"opencode-openai-codex-auth\"]\n}\n```\n\nRestart OpenCode and follow the OAuth authentication flow to connect your ChatGPT Plus/Pro account."
+  },
+  "usage": {
+    "markdown": "## Usage\n\nAfter installation:\n\n1. Run the authentication command\n2. Follow the OAuth flow in your browser\n3. Grant OpenCode access to your ChatGPT Plus/Pro subscription\n4. Start using OpenAI models through your personal subscription\n\n## Benefits\n\n- Use your existing ChatGPT Plus/Pro subscription\n- No additional API costs\n- Official OpenAI authentication\n- Secure OAuth flow"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-11"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "plannotator",
+  "displayName": "Plannotator",
+  "description": "Annotate and review coding agent plans visually, share with your team, and send feedback with one click - collaborative planning tool for AI-assisted development.",
+  "categories": ["Productivity", "Development"],
+  "authors": [
+    {
+      "name": "backnotprop",
+      "url": "https://github.com/backnotprop"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/backnotprop/plannotator"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm to enable visual plan annotation and team collaboration.",
+    "markdown": "## Installation\n\n```bash\nnpm install @plannotator/opencode\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"@plannotator/opencode\"]\n}\n```\n\nRestart OpenCode to enable plan annotation features."
+  },
+  "usage": {
+    "markdown": "## Usage\n\n### Visual Plan Review\n\nReview agent plans before execution:\n\n1. **Agent Creates Plan**: See proposed changes\n2. **Visual Review**: Annotate and comment\n3. **Approve/Modify**: Give feedback\n4. **Execute**: Agent proceeds with approved plan\n\n### Features\n\n- **Visual Interface**: See plans in clear format\n- **Annotations**: Add notes and comments\n- **Team Sharing**: Share plans with team members\n- **One-Click Feedback**: Quick approve/reject\n- **Plan History**: Review past plans\n\n### Team Collaboration\n\n- Share agent plans with team\n- Collect feedback before execution\n- Track plan revisions\n- Learn from past plans\n\n### Benefits\n\n- **Quality Control**: Review before execution\n- **Team Alignment**: Everyone sees the plan\n- **Learning**: Understand agent reasoning\n- **Safety**: Catch issues early\n\n### Use Cases\n\n1. **Code Reviews**: Review planned changes\n2. **Architecture**: Discuss design decisions\n3. **Refactoring**: Validate approach\n4. **Team Projects**: Collaborative planning\n\n### Configuration\n\n```json\n{\n  \"plannotator\": {\n    \"autoOpen\": true,\n    \"requireApproval\": true,\n    \"teamShare\": true\n  }\n}\n```"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-11"
+}

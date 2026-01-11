@@ -1,0 +1,28 @@
+{
+  "name": "subtask2",
+  "displayName": "Subtask2",
+  "description": "A stronger OpenCode /command handler - enhanced command system with improved task decomposition and execution for complex multi-step operations.",
+  "categories": ["Development", "Productivity"],
+  "authors": [
+    {
+      "name": "spoons-and-mirrors",
+      "url": "https://github.com/spoons-and-mirrors"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/spoons-and-mirrors/subtask2"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm to upgrade OpenCode's command handling with advanced task management.",
+    "markdown": "## Installation\n\n```bash\nnpm install @openspoon/subtask2\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"@openspoon/subtask2\"]\n}\n```\n\nRestart OpenCode to enable enhanced command handling."
+  },
+  "usage": {
+    "markdown": "## Usage\n\n### Enhanced Commands\n\nReplaces default command handler with improved version:\n\n- **Better Decomposition**: Breaks complex tasks into subtasks\n- **Parallel Execution**: Run independent tasks simultaneously\n- **Error Recovery**: Automatic retry and fallback\n- **Progress Tracking**: See task execution status\n\n### Features\n\n- **Task Trees**: Hierarchical task breakdown\n- **Dependencies**: Manage task dependencies\n- **Checkpoints**: Resume from failure points\n- **Validation**: Pre-execution validation\n\n### Command Usage\n\nUse commands as normal:\n\n```\n/implement feature-login\n```\n\nSubtask2 automatically:\n1. Analyzes the task\n2. Creates subtask breakdown\n3. Executes in optimal order\n4. Handles errors gracefully\n\n### Benefits\n\n- **Reliability**: Better error handling\n- **Speed**: Parallel execution where possible\n- **Clarity**: See task progress\n- **Robustness**: Recover from failures\n\n### Advanced Features\n\n```json\n{\n  \"subtask2\": {\n    \"maxParallel\": 3,\n    \"autoRetry\": true,\n    \"verbose\": true\n  }\n}\n```\n\n### Use Cases\n\n- Complex refactoring\n- Multi-file changes\n- Feature implementation\n- Large-scale updates"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-11"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "opencode-supermemory",
+  "displayName": "OpenCode Supermemory",
+  "description": "Supermemory plugin for OpenCode - AI-powered long-term memory and knowledge management system that remembers context across sessions.",
+  "categories": ["Productivity"],
+  "authors": [
+    {
+      "name": "supermemoryai",
+      "url": "https://github.com/supermemoryai"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/supermemoryai/opencode-supermemory",
+    "homepage": "https://supermemory.ai"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm and configure Supermemory account for persistent AI memory.",
+    "markdown": "## Installation\n\n```bash\nnpm install opencode-supermemory\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"opencode-supermemory\"]\n}\n```\n\nSign up at [supermemory.ai](https://supermemory.ai) and configure your API key.\n\nRestart OpenCode to enable memory features."
+  },
+  "usage": {
+    "markdown": "## Usage\n\n### Long-Term Memory\n\nOpenCode agents remember:\n\n- **Project Context**: Architecture decisions, patterns used\n- **Coding Style**: Your preferences and conventions\n- **Past Conversations**: Reference previous discussions\n- **Knowledge Base**: Accumulated project knowledge\n\n### Features\n\n- **Persistent Memory**: Survives session restarts\n- **Semantic Search**: Find relevant past context\n- **Automatic Indexing**: No manual note-taking\n- **Smart Recall**: Relevant memories surfaced automatically\n\n### Use Cases\n\n1. **Resume Work**: Pick up where you left off\n2. **Team Knowledge**: Share context with team members\n3. **Decision History**: Why certain choices were made\n4. **Learning**: Agent learns from past interactions\n\n### How It Works\n\n- Automatically stores important context\n- Indexes conversations and decisions\n- Retrieves relevant memories when needed\n- Integrates seamlessly with OpenCode\n\n### Configuration\n\n```json\n{\n  \"supermemory\": {\n    \"autoSave\": true,\n    \"maxMemories\": 1000,\n    \"semantic\": true\n  }\n}\n```"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-11"
+}

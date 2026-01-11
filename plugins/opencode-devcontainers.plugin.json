@@ -1,0 +1,28 @@
+{
+  "name": "opencode-devcontainers",
+  "displayName": "OpenCode DevContainers",
+  "description": "Run multiple devcontainer instances with auto-assigned ports for OpenCode, enabling isolated development environments for different projects.",
+  "categories": ["Development", "Utilities"],
+  "authors": [
+    {
+      "name": "athal7",
+      "url": "https://github.com/athal7"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/athal7/opencode-devcontainers"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm and configure devcontainer settings for your projects.",
+    "markdown": "## Installation\n\n```bash\nnpm install opencode-devcontainers\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"opencode-devcontainers\"]\n}\n```\n\nEnsure Docker is installed and running on your system.\n\nRestart OpenCode to enable devcontainer support."
+  },
+  "usage": {
+    "markdown": "## Usage\n\n### Create a DevContainer\n\n1. Add `.devcontainer/devcontainer.json` to your project\n2. OpenCode will automatically detect and offer to open in container\n3. Multiple projects can run in separate containers simultaneously\n\n### Features\n\n- **Auto Port Assignment**: Automatically assigns available ports\n- **Multiple Instances**: Run several devcontainers at once\n- **Isolation**: Each project in its own environment\n- **Standard Format**: Uses VS Code devcontainer specification\n\n### Example Config\n\n```json\n{\n  \"name\": \"My Project\",\n  \"image\": \"node:18\",\n  \"extensions\": [\"dbaeumer.vscode-eslint\"]\n}\n```"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-10"
+}

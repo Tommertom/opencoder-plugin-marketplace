@@ -1,5 +1,7 @@
 # OpenCode Plugin Marketplace
 
+> **Note:** This is an independent, community-driven project and is not affiliated with, endorsed by, or officially connected to OpenCode (opencode.ai) or Anomaly Co.
+
 A community-driven marketplace for discovering and sharing OpenCode plugins.
 
 ## 🌟 Features

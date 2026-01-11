@@ -1,0 +1,28 @@
+{
+  "name": "opencode-shell-strategy",
+  "displayName": "OpenCode Shell Strategy",
+  "description": "Teaches LLMs to use non-interactive shell flags in OpenCode when no TTY/PTY is available, ensuring commands work correctly in restricted environments.",
+  "categories": ["Development", "Utilities"],
+  "authors": [
+    {
+      "name": "JRedeker",
+      "url": "https://github.com/JRedeker"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/JRedeker/opencode-shell-strategy"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm to teach the LLM proper shell command usage without TTY.",
+    "markdown": "## Installation\n\n```bash\nnpm install opencode-shell-strategy\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"opencode-shell-strategy\"]\n}\n```\n\nRestart OpenCode to enable improved shell command handling."
+  },
+  "usage": {
+    "markdown": "## Usage\n\nThis plugin helps the LLM understand shell limitations:\n\n### What It Does\n\n- **Teaches Non-Interactive Flags**: LLM learns to use `-y`, `--no-input`, etc.\n- **Avoids TTY Requirements**: Prevents commands that need interactive terminals\n- **Better Command Selection**: Chooses appropriate tools for non-interactive execution\n\n### Examples\n\n**Before**: `apt install package` (fails, needs confirmation)\n**After**: `apt install -y package` (works, automatic yes)\n\n**Before**: `git commit` (opens editor, fails)\n**After**: `git commit -m \"message\"` (works, inline message)\n\n### Supported Scenarios\n\n- Package managers (apt, yum, npm)\n- Git operations\n- Database CLIs\n- Any command requiring user input\n\n### Benefits\n\n- Fewer failed commands\n- No hanging processes\n- More reliable automation"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-10"
+}

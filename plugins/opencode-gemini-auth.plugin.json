@@ -1,0 +1,28 @@
+{
+  "name": "opencode-gemini-auth",
+  "displayName": "OpenCode Gemini Auth",
+  "description": "Gemini authentication plugin for OpenCode - connect your Google account to use Gemini models directly in OpenCode.",
+  "categories": ["Providers", "Integration"],
+  "authors": [
+    {
+      "name": "jenslys",
+      "url": "https://github.com/jenslys"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/jenslys/opencode-gemini-auth"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm and authenticate with your Google account to access Gemini models.",
+    "markdown": "## Installation\n\n```bash\nnpm install opencode-gemini-auth\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"opencode-gemini-auth\"]\n}\n```\n\nRestart OpenCode and authenticate with your Google account."
+  },
+  "usage": {
+    "markdown": "## Usage\n\n1. Install the plugin\n2. Authenticate with Google\n3. Access Gemini models in OpenCode\n\n## Supported Models\n\n- Gemini Pro\n- Gemini Pro Vision\n- Other Gemini variants\n\nUse your Google account credentials to authenticate and start using Google's latest AI models."
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-11"
+}

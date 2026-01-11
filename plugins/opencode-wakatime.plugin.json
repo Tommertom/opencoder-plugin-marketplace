@@ -1,0 +1,28 @@
+{
+  "name": "opencode-wakatime",
+  "displayName": "OpenCode WakaTime",
+  "description": "Track OpenCode usage with WakaTime - monitor coding time, track productivity metrics, and analyze your development patterns.",
+  "categories": ["Productivity", "Integration"],
+  "authors": [
+    {
+      "name": "angristan",
+      "url": "https://github.com/angristan"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/angristan/opencode-wakatime"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm and configure with your WakaTime API key to start tracking.",
+    "markdown": "## Installation\n\n```bash\nnpm install opencode-wakatime\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"opencode-wakatime\"]\n}\n```\n\nConfigure your WakaTime API key in the settings.\n\nRestart OpenCode to begin tracking."
+  },
+  "usage": {
+    "markdown": "## Usage\n\nOnce installed and configured:\n\n### Features\n\n- **Automatic Tracking**: All OpenCode sessions tracked automatically\n- **Detailed Metrics**: Time spent per project, language, and file\n- **Dashboard**: View analytics at [wakatime.com](https://wakatime.com)\n- **Leaderboards**: Compare with other developers (optional)\n- **Goals**: Set and track coding time goals\n\n### What Gets Tracked\n\n- Time spent in OpenCode\n- Projects worked on\n- Languages used\n- Files edited\n- Daily coding patterns\n\n### Privacy\n\n- No code content is sent\n- Only metadata tracked\n- Private by default\n- Full control over shared data\n\n### View Your Stats\n\nVisit your WakaTime dashboard to see:\n- Daily/weekly/monthly summaries\n- Language breakdowns\n- Project time distribution\n- Productivity insights"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-11"
+}

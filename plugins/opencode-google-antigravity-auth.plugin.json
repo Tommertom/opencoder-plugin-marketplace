@@ -1,0 +1,28 @@
+{
+  "name": "opencode-google-antigravity-auth",
+  "displayName": "OpenCode Google Antigravity Auth",
+  "description": "Antigravity (Google) authentication plugin for OpenCode - access Google's AI infrastructure and Gemini models through Antigravity.",
+  "categories": ["Providers", "Integration"],
+  "authors": [
+    {
+      "name": "shekohex",
+      "url": "https://github.com/shekohex"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/shekohex/opencode-google-antigravity-auth"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm and authenticate with Google to access Antigravity AI services.",
+    "markdown": "## Installation\n\n```bash\nnpm install opencode-google-antigravity-auth\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"opencode-google-antigravity-auth\"]\n}\n```\n\nRestart OpenCode and authenticate with your Google account."
+  },
+  "usage": {
+    "markdown": "## Usage\n\nThis plugin provides authentication for Google's Antigravity platform:\n\n1. Install and restart OpenCode\n2. Run authentication command\n3. Sign in with Google credentials\n4. Access Gemini models and Google AI services\n\n## Available Services\n\n- Gemini Pro models\n- Google Cloud AI services\n- Enhanced rate limits through Antigravity\n- Google's latest AI infrastructure"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-11"
+}

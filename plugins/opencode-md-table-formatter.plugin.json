@@ -1,0 +1,28 @@
+{
+  "name": "opencode-md-table-formatter",
+  "displayName": "OpenCode Markdown Table Formatter",
+  "description": "Markdown table formatter plugin for OpenCode with concealment mode support - automatically formats and aligns markdown tables for better readability.",
+  "categories": ["Documentation", "Utilities"],
+  "authors": [
+    {
+      "name": "franlol",
+      "url": "https://github.com/franlol"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/franlol/opencode-md-table-formatter"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm to enable automatic markdown table formatting.",
+    "markdown": "## Installation\n\n```bash\nnpm install opencode-md-table-formatter\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"opencode-md-table-formatter\"]\n}\n```\n\nRestart OpenCode to enable markdown table formatting."
+  },
+  "usage": {
+    "markdown": "## Usage\n\n### Automatic Formatting\n\nThe plugin automatically formats markdown tables:\n\n**Before**:\n```markdown\n| Name | Age | City |\n|---|---|---|\n| John | 30 | NYC |\n| Jane | 25 | LA |\n```\n\n**After**:\n```markdown\n| Name | Age | City |\n|------|-----|------|\n| John | 30  | NYC  |\n| Jane | 25  | LA   |\n```\n\n### Features\n\n- **Auto-align**: Columns automatically aligned\n- **Concealment Mode**: Hide formatting characters for cleaner view\n- **On-save Formatting**: Format tables when saving files\n- **Preserve Content**: Only formatting changes, no data loss\n\n### Configuration\n\n```json\n{\n  \"mdTableFormatter\": {\n    \"formatOnSave\": true,\n    \"concealmentMode\": true,\n    \"alignment\": \"auto\"\n  }\n}\n```"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-11"
+}

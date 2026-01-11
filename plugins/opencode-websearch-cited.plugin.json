@@ -1,0 +1,28 @@
+{
+  "name": "opencode-websearch-cited",
+  "displayName": "OpenCode WebSearch Cited",
+  "description": "An OpenCode plugin that provides LLM-powered web search with proper citations, allowing agents to search the web and reference sources accurately.",
+  "categories": ["Integration"],
+  "authors": [
+    {
+      "name": "ghoulr",
+      "url": "https://github.com/ghoulr"
+    }
+  ],
+  "license": "Apache-2.0",
+  "links": {
+    "repository": "https://github.com/ghoulr/opencode-websearch-cited"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm and configure search API credentials for cited web search.",
+    "markdown": "## Installation\n\n```bash\nnpm install opencode-websearch-cited\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"opencode-websearch-cited\"]\n}\n```\n\nConfigure your search API credentials in the settings.\n\nRestart OpenCode to enable web search with citations."
+  },
+  "usage": {
+    "markdown": "## Usage\n\nThe LLM can now search the web and provide cited sources:\n\n### Features\n\n- **Web Search**: Search the web for current information\n- **Citations**: Proper source attribution for all information\n- **URL References**: Direct links to source material\n- **Fact Checking**: Verify claims with sources\n\n### Example\n\nAsk OpenCode:\n> \"What are the latest TypeScript features?\"\n\nThe agent will search the web and provide answers with citations like:\n\n> TypeScript 5.3 introduces...[1]\n>\n> Sources:\n> [1] https://devblogs.microsoft.com/typescript/...\n\n### Configuration\n\n```json\n{\n  \"websearch\": {\n    \"maxResults\": 5,\n    \"includeCitations\": true\n  }\n}\n```"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-11"
+}

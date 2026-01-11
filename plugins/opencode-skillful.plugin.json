@@ -1,0 +1,28 @@
+{
+  "name": "opencode-skillful",
+  "displayName": "OpenCode Skillful",
+  "description": "OpenCode Skills Plugin - Allow your OpenCode agents to lazy load prompts on demand, enabling dynamic skill acquisition and modular capabilities.",
+  "categories": ["Productivity"],
+  "authors": [
+    {
+      "name": "zenobi-us",
+      "url": "https://github.com/zenobi-us"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/zenobi-us/opencode-skillful"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm to enable dynamic skill loading for OpenCode agents.",
+    "markdown": "## Installation\n\n```bash\nnpm install opencode-skillful\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"opencode-skillful\"]\n}\n```\n\nRestart OpenCode to enable skill-based agent capabilities."
+  },
+  "usage": {
+    "markdown": "## Usage\n\n### Lazy Loading Skills\n\nLoad prompts and capabilities only when needed:\n\n- **On-Demand**: Skills loaded when required\n- **Memory Efficient**: Only active skills in memory\n- **Modular**: Easy to add/remove capabilities\n- **Extensible**: Create custom skills\n\n### Skill Library\n\nPre-built skills include:\n\n- **Code Review**: Automated code review prompts\n- **Testing**: Test generation strategies\n- **Documentation**: Doc writing templates\n- **Refactoring**: Common refactoring patterns\n- **Debugging**: Debug investigation workflows\n\n### Creating Skills\n\nDefine custom skills:\n\n```yaml\n# skills/my-skill.yaml\nname: API Design\ndescription: REST API design patterns\nprompt: |\n  When designing APIs, follow these principles:\n  1. RESTful conventions\n  2. Proper HTTP methods\n  3. Clear error responses\n  ...\n```\n\n### Using Skills\n\nAgents automatically load relevant skills:\n\n```\nUser: \"Design an API for user management\"\nAgent: *loads API Design skill*\nAgent: \"Following REST principles...\"\n```\n\n### Benefits\n\n- Faster context loading\n- Specialized knowledge domains\n- Reduced token usage\n- Better response quality"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-11"
+}

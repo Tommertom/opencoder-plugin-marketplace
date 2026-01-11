@@ -1,0 +1,28 @@
+{
+  "name": "opencode-notificator",
+  "displayName": "OpenCode Notificator",
+  "description": "OpenCode plugin for desktop notifications - get notified about important events, task completions, and errors during long-running operations.",
+  "categories": ["Productivity", "Utilities"],
+  "authors": [
+    {
+      "name": "panta82",
+      "url": "https://github.com/panta82"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/panta82/opencode-notificator"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm to enable desktop notifications for OpenCode events.",
+    "markdown": "## Installation\n\n```bash\nnpm install opencode-notificator\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"opencode-notificator\"]\n}\n```\n\nRestart OpenCode to enable desktop notifications."
+  },
+  "usage": {
+    "markdown": "## Usage\n\nReceive desktop notifications for:\n\n### Event Types\n\n- **Task Completion**: When long operations finish\n- **Errors**: When something goes wrong\n- **Milestones**: Project-specific events\n- **Custom Triggers**: Configure your own notifications\n\n### Features\n\n- **Native Notifications**: Uses system notification center\n- **Cross-Platform**: Works on macOS, Windows, Linux\n- **Customizable**: Configure which events trigger notifications\n- **Non-Intrusive**: Respects do-not-disturb settings\n\n### Use Cases\n\n1. **Long Builds**: Get notified when compilation completes\n2. **Test Runs**: Alert when test suite finishes\n3. **Error Monitoring**: Immediate notification of failures\n4. **Background Tasks**: Stay informed about background work\n\n### Configuration\n\n```json\n{\n  \"notifications\": {\n    \"onCompletion\": true,\n    \"onError\": true,\n    \"sound\": true\n  }\n}\n```"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-09"
+}

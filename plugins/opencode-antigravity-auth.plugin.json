@@ -1,0 +1,28 @@
+{
+  "name": "opencode-antigravity-auth",
+  "displayName": "OpenCode Antigravity Auth",
+  "description": "Enable OpenCode to authenticate against Antigravity (Google's IDE) via OAuth to use Antigravity rate limits and access models like gemini-3-pro and claude-opus-4-5-thinking with Google credentials.",
+  "categories": ["Providers", "Integration"],
+  "authors": [
+    {
+      "name": "NoeFabris",
+      "url": "https://github.com/NoeFabris"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/NoeFabris/opencode-antigravity-auth"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm and authenticate with Google to access premium AI models through Antigravity.",
+    "markdown": "## Installation\n\n```bash\nnpm install opencode-antigravity-auth\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"opencode-antigravity-auth\"]\n}\n```\n\nRestart OpenCode and follow the OAuth flow to authenticate with your Google account."
+  },
+  "usage": {
+    "markdown": "## Usage\n\nAuthenticate with Google to access:\n\n- **Gemini 3 Pro**: Google's latest model\n- **Claude Opus 4.5 Thinking**: Advanced reasoning model\n- **Higher rate limits**: Through Antigravity infrastructure\n\n## Authentication\n\n1. Run authentication command\n2. Sign in with Google account\n3. Grant necessary permissions\n4. Start using premium models\n\n## Benefits\n\n- Access to cutting-edge models\n- Better rate limits\n- Google Cloud integration"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-11"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "opencode-notifier",
+  "displayName": "OpenCode Notifier",
+  "description": "OpenCode plugin for desktop notifications and sounds on permission requests, task completion, and error events - enhanced notification system with audio feedback.",
+  "categories": ["Productivity", "Utilities"],
+  "authors": [
+    {
+      "name": "mohak34",
+      "url": "https://github.com/mohak34"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/mohak34/opencode-notifier"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm to enable notifications with sound alerts for OpenCode events.",
+    "markdown": "## Installation\n\n```bash\nnpm install opencode-notifier\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"opencode-notifier\"]\n}\n```\n\nRestart OpenCode to enable notifications and sound alerts."
+  },
+  "usage": {
+    "markdown": "## Usage\n\n### Notification Events\n\n- **Permission Requests**: Alert when LLM needs approval\n- **Task Completion**: Notify when operations finish\n- **Errors**: Immediate alerts for failures\n- **Custom Events**: Configure additional triggers\n\n### Sound Support\n\n- **Audio Feedback**: Different sounds for different events\n- **Customizable**: Choose your own sounds\n- **Mute Option**: Disable sounds while keeping visual notifications\n\n### Features\n\n- **Visual + Audio**: Combined notification system\n- **Priority Levels**: Different styles for different importance\n- **Action Buttons**: Quick actions from notifications\n- **History**: Review past notifications\n\n### Configuration\n\n```json\n{\n  \"notifier\": {\n    \"permissions\": {\n      \"enabled\": true,\n      \"sound\": \"chime\"\n    },\n    \"completion\": {\n      \"enabled\": true,\n      \"sound\": \"success\"\n    },\n    \"errors\": {\n      \"enabled\": true,\n      \"sound\": \"alert\"\n    }\n  }\n}\n```\n\n### Sound Options\n\n- Default system sounds\n- Custom sound files\n- Volume control\n- Per-event configuration"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-11"
+}

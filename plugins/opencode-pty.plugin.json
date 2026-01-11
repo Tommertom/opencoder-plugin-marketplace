@@ -1,0 +1,28 @@
+{
+  "name": "opencode-pty",
+  "displayName": "OpenCode PTY",
+  "description": "OpenCode plugin for interactive PTY management - run background processes, send input, and read output with regex filtering for advanced terminal control.",
+  "categories": ["Development", "Utilities"],
+  "authors": [
+    {
+      "name": "shekohex",
+      "url": "https://github.com/shekohex"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/shekohex/opencode-pty"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm to enable advanced PTY management and background process control.",
+    "markdown": "## Installation\n\n```bash\nnpm install opencode-pty\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugins\": [\"opencode-pty\"]\n}\n```\n\nRestart OpenCode to enable PTY management features."
+  },
+  "usage": {
+    "markdown": "## Usage\n\n### Features\n\n- **Background Processes**: Run long-running commands in background\n- **Interactive Control**: Send input to running processes\n- **Output Filtering**: Use regex to filter and parse output\n- **Process Management**: Start, stop, and monitor processes\n\n### Use Cases\n\n1. **Development Servers**: Run `npm dev` in background\n2. **Watch Modes**: Monitor test runners or build tools\n3. **Interactive CLIs**: Interact with prompts programmatically\n4. **Log Monitoring**: Filter and track log output\n\n### Example\n\n```typescript\n// Start a dev server\nconst pty = await startPTY('npm run dev');\n\n// Wait for \"Server started\" message\nawait pty.waitForOutput(/Server started/);\n\n// Send input to the process\npty.sendInput('r'); // Restart\n\n// Read filtered output\nconst errors = pty.readOutput(/ERROR/);\n```"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-10"
+}
