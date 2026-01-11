@@ -58,14 +58,21 @@ export function PluginDetail(props: PluginDetailProps) {
                 </span>
               </div>
 
-              <Show when={stars() !== null}>
-                <div class="detail-meta-item">
-                  <span class="detail-meta-label">GitHub Stars</span>
+              <div class="detail-meta-item">
+                <span class="detail-meta-label">GitHub Stars</span>
+                <Show 
+                  when={stars() !== null}
+                  fallback={
+                    <span class="detail-meta-value" style="font-size: 0.85em; font-style: italic;">
+                      Not yet loaded
+                    </span>
+                  }
+                >
                   <span class="detail-meta-value detail-stars">
                     ⭐ {formatStars(stars()!)}
                   </span>
-                </div>
-              </Show>
+                </Show>
+              </div>
 
               <div class="detail-meta-item">
                 <span class="detail-meta-label">License</span>

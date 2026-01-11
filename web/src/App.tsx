@@ -58,7 +58,7 @@ function App() {
     <div class="app">
       <header class="header">
         <a
-          href="https://github.com/Tommertom/opencoder-plugin-marketplace"
+          href="https://github.com/Tommertom/opencode-plugin-marketplace"
           target="_blank"
           rel="noopener noreferrer"
           class="github-link"
@@ -148,7 +148,7 @@ function App() {
         <p>
           Want to contribute? Visit our{" "}
           <a
-            href="https://github.com/Tommertom/opencoder-plugin-marketplace"
+            href="https://github.com/Tommertom/opencode-plugin-marketplace"
             target="_blank"
             rel="noopener noreferrer"
           >
