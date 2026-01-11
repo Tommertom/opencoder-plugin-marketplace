@@ -1,0 +1,30 @@
+{
+  "name": "superpowers",
+  "displayName": "Superpowers",
+  "description": "Complete software development workflow system for AI coding agents featuring composable skills, test-driven development, systematic debugging, brainstorming, git worktrees, and subagent-driven development for autonomous multi-hour coding sessions.",
+  "categories": ["Development", "Productivity", "Testing", "Debugging"],
+  "authors": [
+    {
+      "name": "Jesse Vincent (obra)",
+      "url": "https://github.com/obra"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/obra/superpowers",
+    "documentation": "https://github.com/obra/superpowers/blob/main/docs/README.opencode.md",
+    "homepage": "https://blog.fsck.com/2025/10/09/superpowers/"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via git clone to OpenCode config directory and symlink the plugin, enabling automatic skill discovery and workflow automation.",
+    "markdown": "## Installation\n\n### 1. Clone Repository\n\n```bash\nmkdir -p ~/.config/opencode/superpowers\ngit clone https://github.com/obra/superpowers.git ~/.config/opencode/superpowers\n```\n\n### 2. Register Plugin\n\nCreate symlink for OpenCode to discover the plugin:\n\n```bash\nmkdir -p ~/.config/opencode/plugin\nln -sf ~/.config/opencode/superpowers/.opencode/plugin/superpowers.js ~/.config/opencode/plugin/superpowers.js\n```\n\n### 3. Restart OpenCode\n\nRestart OpenCode. Skills will automatically activate via the chat.message hook.\n\n### 4. Verify Installation\n\nAsk your agent: \"do you have superpowers?\"\n\nOr use the find_skills tool to list available skills."
+  },
+  "usage": {
+    "markdown": "## Usage\n\n### Core Workflow\n\n1. **Brainstorming** - Start a feature by having the agent ask clarifying questions and refine design\n2. **Git Worktrees** - Creates isolated development branches automatically\n3. **Planning** - Agent breaks work into detailed 2-5 minute tasks\n4. **Subagent Development** - Dispatches fresh subagents per task with two-stage review\n5. **TDD** - Enforces RED-GREEN-REFACTOR cycle throughout implementation\n6. **Code Review** - Reviews against plan between tasks\n7. **Branch Finishing** - Handles merge/PR workflow and cleanup\n\n### Finding Skills\n\nList all available skills:\n\n```\nuse find_skills tool\n```\n\n### Loading Skills\n\nLoad a specific skill manually:\n\n```\nuse use_skill tool with skill_name: \"superpowers:brainstorming\"\n```\n\n### Available Skills\n\n**Testing:**\n- test-driven-development - RED-GREEN-REFACTOR cycle\n\n**Debugging:**\n- systematic-debugging - 4-phase root cause analysis\n- verification-before-completion - Ensure fixes work\n\n**Collaboration:**\n- brainstorming - Socratic design refinement\n- writing-plans - Detailed implementation plans\n- executing-plans - Batch execution with checkpoints\n- subagent-driven-development - Fast iteration with reviews\n- dispatching-parallel-agents - Concurrent workflows\n- requesting-code-review - Pre-review checklist\n- receiving-code-review - Handle feedback\n- using-git-worktrees - Parallel branch development\n- finishing-a-development-branch - Merge/PR workflow\n\n**Meta:**\n- writing-skills - Create new skills\n- using-superpowers - System introduction\n\n### Custom Skills\n\nCreate personal skills in `~/.config/opencode/skills/` or project skills in `.opencode/skills/`.\n\n**Skill Priority:** Project → Personal → Superpowers\n\n### Philosophy\n\n- **Test-Driven Development** - Write tests first, always\n- **Systematic over ad-hoc** - Process over guessing\n- **Complexity reduction** - Simplicity as primary goal\n- **Evidence over claims** - Verify before declaring success"
+  },
+  "maintained": true,
+  "lastUpdated": "2026-01-11"
+}
