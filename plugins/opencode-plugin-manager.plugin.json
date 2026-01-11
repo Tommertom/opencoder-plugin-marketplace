@@ -1,7 +1,7 @@
 {
   "name": "opencode-plugin-manager",
   "displayName": "OpenCode Plugin Manager",
-  "description": "Command-line interface for managing OpenCode plugins directly from your terminal. Install, create, remove, and list plugins from the marketplace with simple slash commands. (Experimental)",
+  "description": "Command-line interface for managing OpenCode plugins from the OpenCode Plugin Marketplace. Install marketplace plugins, create new plugin templates, and manage your plugin collection. (Experimental)",
   "categories": ["Utilities", "Productivity"],
   "authors": [
     {

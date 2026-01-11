@@ -4,7 +4,7 @@ This directory contains the `/plugin` custom command for OpenCode.
 
 ## What is this?
 
-The `plugin.md` file defines a custom slash command that allows you to manage OpenCode plugins directly from your terminal.
+The `plugin.md` file defines a custom slash command that allows you to manage OpenCode plugins from the OpenCode Plugin Marketplace directly from your terminal.
 
 ## Installation
 
@@ -12,7 +12,7 @@ See the main [README.md](../README.md) for installation instructions.
 
 ## What does it do?
 
-The `/plugin` command provides four subcommands:
+The `/plugin` command provides four subcommands for managing OpenCode Plugin Marketplace plugins:
 
 ### `/plugin list`
 Lists all available plugins in the marketplace with their:

@@ -18,7 +18,7 @@ Visit the marketplace at: [https://opencode-plugin-market.web.app](https://openc
 
 ## 🔧 Plugin Manager CLI
 
-Install plugins directly from your terminal with the `/plugin` command!
+Install plugins from the OpenCode Plugin Marketplace directly from your terminal with the `/plugin` command!
 
 > **⚠️ Experimental:** This feature is experimental and may change in future versions.
 
