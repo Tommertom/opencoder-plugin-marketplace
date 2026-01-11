@@ -16,6 +16,33 @@ cd opencode-plugin-marketplace
 
 ### Step 2: Create Your Plugin File
 
+#### Option A: Use OpenCode AI Agent (Recommended)
+
+If you have OpenCode installed, you can use the AI agent to automatically create your plugin file:
+
+1. **Open your terminal** in the cloned repository directory
+2. **Run OpenCode** with the following prompt:
+
+```
+Research the plugin at <url> and create a new plugin configuration in the plugins directory, using the schema in plugin.schema.json.
+```
+
+Replace `<url>` with your plugin's GitHub repository URL.
+
+**Example**:
+```
+Research the plugin at https://github.com/yourusername/your-plugin-repo and create a new plugin configuration in the plugins directory, using the schema in plugin.schema.json.
+```
+
+The AI agent will:
+- Analyze your plugin repository (README, package.json, etc.)
+- Extract relevant information (name, description, authors, license)
+- Generate a properly formatted `.plugin.json` file
+- Place it in the `plugins/` directory with the correct filename
+- Ensure it validates against the schema
+
+#### Option B: Create Manually
+
 1. **Navigate to the `plugins/` directory**
 2. **Create a new file** named exactly: `your-plugin-name.plugin.json`
    - Use **lowercase** letters only
