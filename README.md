@@ -12,7 +12,7 @@ A community-driven marketplace for discovering and sharing OpenCode plugins.
 
 ## 🚀 Live Site
 
-Visit the marketplace at: `https://your-firebase-project.web.app`
+Visit the marketplace at: [https://opencode-plugin-market.web.app](https://opencode-plugin-market.web.app)
 
 ## 🤝 Contributing a Plugin
 
