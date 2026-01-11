@@ -1,0 +1,28 @@
+{
+  "name": "opencode-direnv",
+  "displayName": "Direnv",
+  "description": "Automatically load and unload environment variables from .envrc files when entering project directories, providing seamless integration with direnv for OpenCode sessions.",
+  "categories": ["Development", "Utilities", "Integration"],
+  "authors": [
+    {
+      "name": "simonwjackson",
+      "url": "https://github.com/simonwjackson"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/simonwjackson/opencode-direnv"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm to enable automatic direnv environment variable loading when OpenCode enters project directories.",
+    "markdown": "## Installation\n\nFirst, ensure direnv is installed on your system:\n```bash\n# macOS\nbrew install direnv\n\n# Ubuntu/Debian\nsudo apt install direnv\n```\n\nThen install the plugin:\n```bash\nnpm install -g opencode-direnv\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugin\": [\"opencode-direnv\"]\n}\n```\n\nRestart OpenCode to enable direnv integration."
+  },
+  "usage": {
+    "markdown": "## Usage\n\n### Basic Setup\nCreate a `.envrc` file in your project root:\n\n```bash\n# .envrc\nexport DATABASE_URL=\"postgresql://localhost/mydb\"\nexport API_KEY=\"your-api-key-here\"\nexport NODE_ENV=\"development\"\n```\n\nAllow direnv to load the file:\n```bash\ndirenv allow\n```\n\n### Automatic Loading\nWhen OpenCode enters a directory with `.envrc`:\n- Environment variables are automatically loaded\n- AI can access project-specific configurations\n- No manual environment setup needed\n\n### Use Cases\n- **Database Connections**: Load connection strings per project\n- **API Keys**: Project-specific credentials\n- **Build Configurations**: Environment-specific settings\n- **Tool Paths**: Custom binary or tool locations\n\n### Security\n- `.envrc` files are project-specific\n- Must be explicitly allowed with `direnv allow`\n- Keep `.envrc` in `.gitignore` for sensitive data\n\n### Advanced\nUse direnv features like:\n```bash\n# Load from .env file\ndotenv\n\n# Extend PATH\nPATH_add bin\n\n# Load from other files\nsource_env ../shared.envrc\n```"
+  },
+  "maintained": true,
+  "lastUpdated": "2025-01-11"
+}

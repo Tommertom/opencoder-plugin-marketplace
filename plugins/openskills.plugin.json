@@ -1,0 +1,28 @@
+{
+  "name": "openskills",
+  "displayName": "Openskills",
+  "description": "Universal skills loader that works with any AI coding agent, providing reusable task instructions and workflows that can be shared across different AI assistant platforms.",
+  "categories": ["Development", "Productivity", "Utilities"],
+  "authors": [
+    {
+      "name": "numman-ali",
+      "url": "https://github.com/numman-ali"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/numman-ali/openskills"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm to enable universal skills loading for AI agents with cross-platform compatibility.",
+    "markdown": "## Installation\n\n```bash\nnpm install -g openskills\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugin\": [\"openskills\"]\n}\n```\n\nCreate a `skills/` directory in your project or home directory to store skill definitions."
+  },
+  "usage": {
+    "markdown": "## Usage\n\nDefine reusable skills as markdown files in your `skills/` directory:\n\n### Example Skill: code-review.md\n```markdown\n# Code Review Skill\n\nPerform a thorough code review covering:\n- Code quality and best practices\n- Potential bugs and edge cases\n- Performance considerations\n- Security vulnerabilities\n- Test coverage\n```\n\n### Using Skills\nAI agents can load and execute skills:\n```\nLoad the code-review skill and review this file\n```\n\n### Sharing Skills\nSkills are portable and work across different AI coding assistants, making it easy to:\n- Share team workflows\n- Standardize code review processes\n- Create reusable automation patterns\n- Build a library of common tasks\n\n### Skill Organization\n```\nskills/\n  code-review.md\n  refactoring.md\n  testing.md\n  documentation.md\n```"
+  },
+  "maintained": true,
+  "lastUpdated": "2025-01-11"
+}

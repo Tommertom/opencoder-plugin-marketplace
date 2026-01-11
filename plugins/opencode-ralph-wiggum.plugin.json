@@ -1,0 +1,28 @@
+{
+  "name": "opencode-ralph-wiggum",
+  "displayName": "Ralph Wiggum",
+  "description": "Enable iterative AI development loops where the agent automatically tests, debugs, and refines code until it works correctly, inspired by Ralph Wiggum's persistent optimism.",
+  "categories": ["Development", "Testing", "Debugging"],
+  "authors": [
+    {
+      "name": "Th0rgal",
+      "url": "https://github.com/Th0rgal"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/Th0rgal/opencode-ralph-wiggum"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm to enable automatic iterative development loops with testing, debugging, and refinement cycles.",
+    "markdown": "## Installation\n\n```bash\nnpm install -g opencode-ralph-wiggum\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugin\": [\"opencode-ralph-wiggum\"]\n}\n```\n\nRestart OpenCode to enable iterative development mode."
+  },
+  "usage": {
+    "markdown": "## Usage\n\n### Automatic Iteration\nWhen you ask the AI to implement a feature, Ralph Wiggum automatically:\n\n1. **Implement** - Write the initial code\n2. **Test** - Run tests to verify functionality\n3. **Debug** - If tests fail, analyze the errors\n4. **Refine** - Fix the issues and try again\n5. **Repeat** - Continue until tests pass\n\n### Example Flow\n```\nYou: \"Implement a user authentication system\"\n\nRalph Wiggum:\n✓ Writing authentication code...\n✗ Tests failed: Invalid token format\n✓ Fixed token validation\n✗ Tests failed: Database connection error\n✓ Added connection retry logic\n✓ All tests passing!\n```\n\n### Configuration\nCustomize iteration behavior:\n\n```json\n{\n  \"ralphWiggum\": {\n    \"maxIterations\": 10,\n    \"runTests\": true,\n    \"autoFix\": true,\n    \"verbose\": true\n  }\n}\n```\n\n### Features\n- **Persistent Debugging**: Never gives up until code works\n- **Test Integration**: Automatically runs your test suite\n- **Error Analysis**: Learns from failures\n- **Progress Tracking**: Shows iteration steps\n- **Safety Limits**: Configurable max iterations\n\n### Best For\n- Complex features with multiple edge cases\n- Test-driven development workflows\n- Learning from errors iteratively\n- Rapid prototyping with quality assurance"
+  },
+  "maintained": true,
+  "lastUpdated": "2025-01-11"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "opencode-tokenscope",
+  "displayName": "Tokenscope",
+  "description": "Track and analyze token usage and API costs in real-time during OpenCode sessions, helping you optimize AI interactions and manage budget across different models.",
+  "categories": ["Productivity", "Utilities"],
+  "authors": [
+    {
+      "name": "ramtinJ95",
+      "url": "https://github.com/ramtinJ95"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/ramtinJ95/opencode-tokenscope"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm to enable real-time token usage tracking and cost analysis for all AI model interactions.",
+    "markdown": "## Installation\n\n```bash\nnpm install -g opencode-tokenscope\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugin\": [\"opencode-tokenscope\"]\n}\n```\n\nRestart OpenCode to start tracking token usage."
+  },
+  "usage": {
+    "markdown": "## Usage\n\nOnce installed, Tokenscope automatically tracks:\n\n### Real-Time Metrics\n- **Input tokens**: Tokens sent to the AI\n- **Output tokens**: Tokens received from the AI\n- **Total tokens**: Combined usage per session\n- **Cost estimates**: Calculated based on model pricing\n\n### Per-Session Analytics\n```\nSession: Refactor authentication\nModel: Claude 3.5 Sonnet\nInput: 15,234 tokens\nOutput: 8,921 tokens\nTotal: 24,155 tokens\nEstimated Cost: $0.36\n```\n\n### Multi-Model Support\nTracks usage across different AI models:\n- Claude (all versions)\n- GPT-4, GPT-3.5\n- Other OpenAI models\n\n### Budget Management\n- Monitor spending trends\n- Identify expensive sessions\n- Optimize prompt efficiency\n- Track usage by project\n\nView detailed reports with `/tokenscope` command."
+  },
+  "maintained": true,
+  "lastUpdated": "2025-01-11"
+}

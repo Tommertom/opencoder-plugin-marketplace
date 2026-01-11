@@ -1,0 +1,28 @@
+{
+  "name": "with-context-mcp",
+  "displayName": "With Context MCP",
+  "description": "Add project-specific context and documentation to AI conversations using markdown files, with seamless Obsidian vault integration for managing knowledge bases and project notes.",
+  "categories": ["Documentation", "Productivity", "Integration"],
+  "authors": [
+    {
+      "name": "boxpositron",
+      "url": "https://github.com/boxpositron"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/boxpositron/with-context-mcp"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm and configure with your markdown notes directory or Obsidian vault path for context injection.",
+    "markdown": "## Installation\n\n```bash\nnpm install -g with-context-mcp\n```\n\nAdd to your OpenCode config with your notes directory:\n\n```json\n{\n  \"mcpServers\": {\n    \"with-context\": {\n      \"command\": \"with-context-mcp\",\n      \"args\": [\"--path\", \"/path/to/your/notes\"]\n    }\n  }\n}\n```\n\nFor Obsidian integration, point to your vault directory."
+  },
+  "usage": {
+    "markdown": "## Usage\n\nOnce configured, you can reference your markdown notes in AI conversations:\n\n### Basic Usage\n```\nUse the context from architecture-decisions.md to help refactor this code\n```\n\n### Obsidian Integration\nIf you use Obsidian, the plugin automatically reads from your vault:\n- Project documentation\n- Architecture decision records (ADRs)\n- Code style guides\n- API specifications\n- Team conventions\n\n### Organizing Context\nCreate markdown files in your notes directory:\n```\nnotes/\n  project-overview.md\n  api-guidelines.md\n  deployment-process.md\n  troubleshooting.md\n```\n\nThe AI can then use these files as additional context for better, project-specific responses."
+  },
+  "maintained": true,
+  "lastUpdated": "2025-01-11"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "opencode-ignore",
+  "displayName": "Opencode Ignore",
+  "description": "Control what files and directories AI agents can access by using .ignore patterns, preventing them from reading sensitive files, large dependencies, or generated code.",
+  "categories": ["Utilities", "Development"],
+  "authors": [
+    {
+      "name": "lgladysz",
+      "url": "https://github.com/lgladysz"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/lgladysz/opencode-ignore"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm to enable .ignore pattern support for blocking AI access to specified files and directories.",
+    "markdown": "## Installation\n\n```bash\nnpm install -g opencode-ignore\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugin\": [\"opencode-ignore\"]\n}\n```\n\nCreate a `.ignore` file in your project root with patterns for files/directories to block."
+  },
+  "usage": {
+    "markdown": "## Usage\n\nCreate a `.ignore` file in your project root with glob patterns:\n\n```\n# Ignore dependencies\nnode_modules/\n*.lock\n\n# Ignore build artifacts\ndist/\nbuild/\n*.min.js\n\n# Ignore sensitive files\n.env\n*.key\ncredentials.json\n\n# Ignore large files\n*.log\n*.bin\n```\n\nThe plugin will automatically prevent AI agents from accessing files matching these patterns, keeping your workspace clean and focused."
+  },
+  "maintained": true,
+  "lastUpdated": "2025-01-11"
+}

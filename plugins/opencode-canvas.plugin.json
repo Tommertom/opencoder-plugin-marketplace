@@ -1,0 +1,28 @@
+{
+  "name": "opencode-canvas",
+  "displayName": "Opencode Canvas",
+  "description": "Create interactive terminal canvases within tmux sessions, enabling rich visual displays, real-time dashboards, and dynamic content rendering directly in your terminal.",
+  "categories": ["UI/UX", "Productivity", "Utilities"],
+  "authors": [
+    {
+      "name": "mailshieldai",
+      "url": "https://github.com/mailshieldai"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/mailshieldai/opencode-canvas"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm and configure tmux integration to enable interactive terminal canvas displays with rich visual content.",
+    "markdown": "## Installation\n\nEnsure tmux is installed:\n```bash\n# macOS\nbrew install tmux\n\n# Ubuntu/Debian\nsudo apt install tmux\n```\n\nInstall the plugin:\n```bash\nnpm install -g opencode-canvas\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugin\": [\"opencode-canvas\"]\n}\n```\n\nRestart OpenCode inside a tmux session to enable canvas features."
+  },
+  "usage": {
+    "markdown": "## Usage\n\n### Creating Canvases\nOpen an interactive canvas:\n\n```\n/canvas create dashboard\n/canvas create logs\n/canvas create metrics\n```\n\n### Canvas Types\n\n**Dashboard Canvas**\n```\n/canvas dashboard\n```\nDisplays:\n- Project status\n- Active tasks\n- Resource usage\n- Recent changes\n\n**Log Viewer**\n```\n/canvas logs\n```\nReal-time log streaming with:\n- Syntax highlighting\n- Filtering options\n- Search functionality\n\n**Metrics Display**\n```\n/canvas metrics\n```\nVisual metrics including:\n- Build times\n- Test coverage\n- Code complexity\n- Performance stats\n\n### Canvas Management\n```bash\n/canvas list              # Show all canvases\n/canvas switch <name>     # Switch to canvas\n/canvas close <name>      # Close specific canvas\n/canvas refresh           # Update current canvas\n```\n\n### Features\n- **Split View**: Multiple canvases in tmux panes\n- **Real-time Updates**: Live data streaming\n- **Interactive**: Navigate and filter content\n- **Customizable**: Configure layouts and themes\n- **Keyboard Shortcuts**: Efficient navigation\n\n### Example Layout\n```\n┌─────────────┬─────────────┐\n│   Editor    │  Dashboard  │\n│             │             │\n├─────────────┼─────────────┤\n│    Logs     │   Metrics   │\n│             │             │\n└─────────────┴─────────────┘\n```\n\n### Requirements\n- Must run inside a tmux session\n- Terminal with 256 color support recommended"
+  },
+  "maintained": true,
+  "lastUpdated": "2025-01-11"
+}

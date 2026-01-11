@@ -1,0 +1,28 @@
+{
+  "name": "opencode-warcraft-notifications",
+  "displayName": "Warcraft Notifications",
+  "description": "Get nostalgic Warcraft II sound notifications in your terminal when AI completes tasks, making your coding sessions more fun and engaging with classic game audio cues.",
+  "categories": ["UI/UX", "Productivity"],
+  "authors": [
+    {
+      "name": "pantheon-org",
+      "url": "https://github.com/pantheon-org"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/pantheon-org/opencode-warcraft-notifications"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm to enable Warcraft II sound effects for task completion notifications in OpenCode.",
+    "markdown": "## Installation\n\n```bash\nnpm install -g opencode-warcraft-notifications\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugin\": [\"opencode-warcraft-notifications\"]\n}\n```\n\nRestart OpenCode to activate the sound notifications."
+  },
+  "usage": {
+    "markdown": "## Usage\n\nOnce installed, the plugin automatically plays Warcraft II sound effects when:\n\n- Tasks are completed successfully\n- Builds finish\n- Tests pass or fail\n- Long-running operations complete\n\nThe classic Warcraft sounds provide audio feedback without being intrusive, letting you know when the AI has finished working on your requests.\n\nNo configuration needed - just install and enjoy the nostalgia!"
+  },
+  "maintained": true,
+  "lastUpdated": "2025-01-11"
+}

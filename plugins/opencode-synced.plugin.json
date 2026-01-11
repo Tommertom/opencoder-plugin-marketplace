@@ -1,0 +1,28 @@
+{
+  "name": "opencode-synced",
+  "displayName": "Opencode Synced",
+  "description": "Synchronize OpenCode configurations, plugins, and settings across multiple machines using GitHub as the storage backend, keeping your development environment consistent everywhere.",
+  "categories": ["Utilities", "Productivity", "Integration"],
+  "authors": [
+    {
+      "name": "iHildy",
+      "url": "https://github.com/iHildy"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/iHildy/opencode-synced"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm and configure with a GitHub repository to sync OpenCode settings and configurations across machines.",
+    "markdown": "## Installation\n\n```bash\nnpm install -g opencode-synced\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugin\": [\"opencode-synced\"]\n}\n```\n\nInitialize sync with your GitHub repo:\n```bash\nopencode-synced init <github-username>/<repo-name>\n```\n\nAuthenticate with GitHub:\n```bash\nopencode-synced auth\n```"
+  },
+  "usage": {
+    "markdown": "## Usage\n\n### Initial Setup\n1. Create a private GitHub repo for your config\n2. Run `opencode-synced init username/repo-name`\n3. Authenticate with GitHub token\n4. Push your current config: `opencode-synced push`\n\n### Syncing Configurations\n```bash\nopencode-synced push    # Upload local config to GitHub\nopencode-synced pull    # Download config from GitHub\nopencode-synced status  # Check sync status\n```\n\n### What Gets Synced\n- OpenCode configuration files\n- Plugin settings\n- Custom commands\n- Keyboard shortcuts\n- Theme preferences\n- Project templates\n\n### Multi-Machine Workflow\n**On Machine 1:**\n```bash\n# Make config changes\nopencode-synced push\n```\n\n**On Machine 2:**\n```bash\nopencode-synced pull\n# Config is now in sync!\n```\n\n### Conflict Resolution\nIf conflicts occur, the plugin will:\n- Show differences between local and remote\n- Let you choose which version to keep\n- Optionally merge changes\n\n### Security\n- Uses private GitHub repositories\n- Supports GitHub personal access tokens\n- Encrypted credential storage\n- No sensitive data in public repos"
+  },
+  "maintained": true,
+  "lastUpdated": "2025-01-11"
+}

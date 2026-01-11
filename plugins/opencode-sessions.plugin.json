@@ -1,0 +1,28 @@
+{
+  "name": "opencode-sessions",
+  "displayName": "Opencode Sessions",
+  "description": "Enable multi-agent collaboration and advanced session management with persistent context, allowing multiple AI agents to work together on complex tasks with shared knowledge.",
+  "categories": ["Development", "Productivity", "Integration"],
+  "authors": [
+    {
+      "name": "malhashemi",
+      "url": "https://github.com/malhashemi"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/malhashemi/opencode-sessions"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm to enable multi-agent collaboration with persistent session context and shared knowledge management.",
+    "markdown": "## Installation\n\n```bash\nnpm install -g opencode-sessions\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugin\": [\"opencode-sessions\"]\n}\n```\n\nRestart OpenCode to enable advanced session management features."
+  },
+  "usage": {
+    "markdown": "## Usage\n\n### Multi-Agent Collaboration\nCoordinate multiple AI agents working on the same project:\n\n```\n/session create \"Refactor authentication module\"\n/session add-agent backend-specialist\n/session add-agent frontend-specialist\n/session add-agent security-reviewer\n```\n\n### Persistent Context\n- Share context across multiple agents\n- Maintain project state between sessions\n- Track decisions and changes\n- Coordinate complex workflows\n\n### Session Management\n```bash\n/session list              # View all sessions\n/session switch <name>     # Switch active session\n/session share <agent>     # Share context with agent\n/session export            # Export session data\n```\n\n### Use Cases\n- **Large Refactors**: Coordinate frontend, backend, and testing agents\n- **Code Reviews**: Multiple reviewers with different specializations\n- **Complex Features**: Break down work across specialized agents\n- **Team Workflows**: Share context with team members\n\n### Benefits\n- Agents share knowledge and context\n- Avoid repeating information\n- Better coordination on complex tasks\n- Persistent project memory"
+  },
+  "maintained": true,
+  "lastUpdated": "2025-01-11"
+}

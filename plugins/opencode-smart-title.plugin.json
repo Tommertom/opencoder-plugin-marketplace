@@ -1,0 +1,28 @@
+{
+  "name": "opencode-smart-title",
+  "displayName": "Smart Title",
+  "description": "Automatically generate meaningful and descriptive titles for your OpenCode sessions based on conversation context, making it easy to find and organize past work.",
+  "categories": ["Productivity", "Utilities"],
+  "authors": [
+    {
+      "name": "Tarquinen",
+      "url": "https://github.com/Tarquinen"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/Tarquinen/opencode-smart-title"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm to enable automatic intelligent session title generation based on conversation content.",
+    "markdown": "## Installation\n\n```bash\nnpm install -g opencode-smart-title\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugin\": [\"opencode-smart-title\"]\n}\n```\n\nRestart OpenCode to activate automatic title generation."
+  },
+  "usage": {
+    "markdown": "## Usage\n\nThe plugin automatically generates descriptive session titles based on your conversation:\n\n### Before\n```\nSession: Untitled-2024-01-11-143022\n```\n\n### After\n```\nSession: Refactor authentication module with JWT\n```\n\n### How It Works\n- Analyzes conversation context and code changes\n- Generates concise, meaningful titles\n- Updates automatically as the session progresses\n- Helps you quickly identify past work\n\n### Benefits\n- No more generic \"Untitled\" sessions\n- Easier to find relevant past conversations\n- Better session organization\n- Saves time when reviewing work history\n\nNo manual configuration needed - just install and the plugin handles the rest!"
+  },
+  "maintained": true,
+  "lastUpdated": "2025-01-11"
+}

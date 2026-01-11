@@ -1,0 +1,28 @@
+{
+  "name": "codex",
+  "displayName": "OpenHax Codex",
+  "description": "OAuth authentication plugin that enables ChatGPT Plus and Pro users to securely connect their accounts to OpenCode for enhanced AI-powered development workflows.",
+  "categories": ["Integration", "Utilities"],
+  "authors": [
+    {
+      "name": "open-hax",
+      "url": "https://github.com/open-hax"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/open-hax/codex"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm and configure OAuth credentials to authenticate ChatGPT Plus/Pro accounts with OpenCode.",
+    "markdown": "## Installation\n\n```bash\nnpm install -g @open-hax/codex\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugin\": [\"codex\"]\n}\n```\n\nRun the authentication setup:\n```bash\ncodex auth\n```\n\nFollow the OAuth flow to link your ChatGPT Plus or Pro account."
+  },
+  "usage": {
+    "markdown": "## Usage\n\n### Initial Setup\n1. Run `codex auth` to start OAuth flow\n2. Log in with your ChatGPT Plus/Pro credentials\n3. Authorize OpenCode access\n4. Authentication token is securely stored\n\n### Features\n- **Secure OAuth**: Industry-standard authentication\n- **Token Management**: Automatic token refresh\n- **Account Linking**: Connect multiple ChatGPT accounts\n- **Session Persistence**: Stay logged in across sessions\n\n### Requirements\n- Active ChatGPT Plus or Pro subscription\n- Valid OpenAI account credentials\n\n### Commands\n```bash\ncodex auth          # Authenticate account\ncodex status        # Check authentication status\ncodex logout        # Remove authentication\n```\n\n### Privacy\nAll credentials are stored locally and encrypted. No data is sent to third parties."
+  },
+  "maintained": true,
+  "lastUpdated": "2025-01-11"
+}

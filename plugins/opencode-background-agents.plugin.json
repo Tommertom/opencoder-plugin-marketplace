@@ -1,0 +1,28 @@
+{
+  "name": "opencode-background-agents",
+  "displayName": "Background Agents",
+  "description": "Delegate long-running tasks to background AI agents that work asynchronously while you continue with other work, with persistent context and progress tracking.",
+  "categories": ["Productivity", "Development", "Utilities"],
+  "authors": [
+    {
+      "name": "kdcokenny",
+      "url": "https://github.com/kdcokenny"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/kdcokenny/opencode-background-agents"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm to enable asynchronous background task delegation with persistent context and progress monitoring.",
+    "markdown": "## Installation\n\n```bash\nnpm install -g opencode-background-agents\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugin\": [\"opencode-background-agents\"]\n}\n```\n\nRestart OpenCode to enable background agent capabilities."
+  },
+  "usage": {
+    "markdown": "## Usage\n\n### Starting Background Tasks\nDelegate work to background agents:\n\n```\n/background start \"Refactor the authentication module to use OAuth2\"\n/background start \"Write comprehensive tests for the API layer\"\n/background start \"Update all dependencies and fix breaking changes\"\n```\n\n### Monitoring Progress\n```bash\n/background list        # View all background tasks\n/background status <id> # Check specific task status\n/background logs <id>   # View task execution logs\n```\n\n### Task Management\n```bash\n/background pause <id>  # Pause a running task\n/background resume <id> # Resume a paused task\n/background stop <id>   # Stop and remove a task\n/background results <id> # View completed task results\n```\n\n### Features\n- **Async Execution**: Tasks run in the background\n- **Persistent Context**: Agents maintain project knowledge\n- **Progress Tracking**: Real-time status updates\n- **Result Retrieval**: Get outputs when ready\n- **Multi-tasking**: Run multiple agents simultaneously\n\n### Example Workflow\n```\n# Start long-running tasks\n/background start \"Migrate database to PostgreSQL\"\n/background start \"Implement dark mode theme\"\n\n# Continue working on other things\n/background list\n> Task 1: Database migration [In Progress - 45%]\n> Task 2: Dark mode [Completed]\n\n# Check results when ready\n/background results 2\n```\n\n### Best For\n- Large refactoring tasks\n- Comprehensive test writing\n- Documentation generation\n- Dependency updates\n- Performance optimization"
+  },
+  "maintained": true,
+  "lastUpdated": "2025-01-11"
+}

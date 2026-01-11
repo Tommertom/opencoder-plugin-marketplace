@@ -1,0 +1,28 @@
+{
+  "name": "opencode-roadmap",
+  "displayName": "Opencode Roadmap",
+  "description": "Create and maintain persistent project roadmaps that survive across OpenCode sessions, helping you track long-term goals, milestones, and feature development plans.",
+  "categories": ["Documentation", "Productivity", "Development"],
+  "authors": [
+    {
+      "name": "IgorWarzocha",
+      "url": "https://github.com/IgorWarzocha"
+    }
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/IgorWarzocha/Opencode-Roadmap"
+  },
+  "opencode": {
+    "minimumVersion": "1.0.0"
+  },
+  "installation": {
+    "summary": "Install via npm to create persistent project roadmaps and track feature development across multiple sessions.",
+    "markdown": "## Installation\n\n```bash\nnpm install -g opencode-roadmap\n```\n\nAdd to your OpenCode config:\n\n```json\n{\n  \"plugin\": [\"opencode-roadmap\"]\n}\n```\n\nRestart OpenCode to enable roadmap management features."
+  },
+  "usage": {
+    "markdown": "## Usage\n\n### Creating a Roadmap\n```\n/roadmap create \"E-commerce Platform Rebuild\"\n```\n\n### Adding Milestones\n```\n/roadmap add-milestone \"User Authentication\" --priority high\n/roadmap add-milestone \"Product Catalog\" --priority high\n/roadmap add-milestone \"Shopping Cart\" --priority medium\n/roadmap add-milestone \"Payment Integration\" --priority high\n```\n\n### Tracking Progress\n```\n/roadmap status              # View current progress\n/roadmap complete <id>       # Mark milestone complete\n/roadmap update <id> <text>  # Update milestone details\n```\n\n### Features\n- **Persistent Storage**: Roadmaps saved across sessions\n- **Milestone Tracking**: Organize work into phases\n- **Priority Levels**: High, medium, low prioritization\n- **Progress Visualization**: See completion status\n- **Multiple Roadmaps**: Manage different projects\n\n### Example Roadmap\n```\nProject: Mobile App Rewrite\n├─ ✓ Setup React Native environment\n├─ ⏳ Implement navigation structure\n├─ ⏳ Build authentication flow\n├─ ○ Create API integration layer\n└─ ○ Implement offline support\n\nProgress: 20% (1/5 complete)\n```"
+  },
+  "maintained": true,
+  "lastUpdated": "2025-01-11"
+}
