@@ -14,7 +14,7 @@ Plugin name (if provided): **$2**
 
 ## Available Subcommands
 
-- **install <name>** - Install a plugin from the OpenCode Plugin Marketplace
+- **install [-g] <name>** - Install a plugin from the OpenCode Plugin Marketplace (use -g for global installation to ~/.config/opencode/)
 - **create <name>** - Scaffold a new plugin with boilerplate code
 - **remove <name>** - Remove an installed plugin
 - **list** - List all available plugins in the marketplace
@@ -23,28 +23,37 @@ Plugin name (if provided): **$2**
 
 ## IMPORTANT: Follow these instructions based on the subcommand
 
-### If $1 is "install":
+### If $1 is "install"
 
-**Goal**: Install a plugin from the marketplace to the local project.
+**Goal**: Install a plugin from the marketplace to the local project or globally (if -g is used).
 
-1. **Fetch marketplace plugins**:
+1. **Detect Installation Target**:
+   - Check if the command includes the `-g` flag or any other intent to install the plugin globally.
+   - If `-g` is present:
+     - Target directory: `~/.config/opencode/` (resolve `~` to the user's home directory)
+     - Config file: `~/.config/opencode/opencode.json`
+   - Else (default):
+     - Target directory: `./.opencode/` (current working directory)
+     - Config file: `./opencode.json`
+
+2. **Fetch marketplace plugins**:
    - Use WebFetch to load the plugin list from GitHub API:
      `https://api.github.com/repos/anomalyco/opencode-plugin-marketplace/contents/plugins`
    - This returns a JSON array of files in the plugins directory
    - Look for files ending in `.plugin.json`
 
-2. **Find matching plugin**:
+3. **Find matching plugin**:
    - Search for a plugin file named `$2.plugin.json`
    - If not found, show available plugins and ask the user to clarify
    - If found, fetch the full plugin JSON file using the `download_url` from the API response
 
-3. **Check if installable**:
+4. **Check if installable**:
    - Check if the plugin has `installableFromMarketplace: true`
    - If not present or false, inform the user:
      "This plugin is not marked as installable via the /plugin command. Please follow the manual installation instructions from the marketplace website."
    - Then stop processing
 
-4. **Parse installation instructions**:
+5. **Parse installation instructions**:
    - Extract the `installation.markdown` field
    - Parse it carefully to understand the installation steps
    - Common patterns include:
@@ -53,37 +62,41 @@ Plugin name (if provided): **$2**
      - `cp -r .opencode ./` or similar file copying
      - Configuration in `opencode.json`
 
-5. **Create local .opencode directory**:
-   - Ensure `.opencode/` directory exists in the current working directory
-   - Create subdirectories as needed: `.opencode/plugin/` and `.opencode/command/`
+6. **Create target directory**:
+   - Ensure the target plugin directory exists:
+     - Local: `.opencode/plugin/` and `.opencode/command/` in the CWD.
+     - Global: `~/.config/opencode/plugin/` and `~/.config/opencode/command/` in the home directory.
 
-6. **Execute installation steps**:
+7. **Execute installation steps**:
    - If installation requires git clone:
      - Clone to a temporary directory
-     - Copy the `.opencode` folder from the cloned repo to the local `.opencode/`
+     - Copy the `.opencode` folder from the cloned repo to the targeted `.opencode/` or `~/.config/opencode/` directory.
      - Remove the temporary clone directory
    - If installation requires npm install:
      - Check if the package is an npm package
      - If so, inform the user to add it to their `opencode.json` config manually
    - Copy any necessary files to `.opencode/plugin/` or `.opencode/command/`
 
-7. **Update opencode.json if needed**:
-   - Check if `opencode.json` exists in the current directory
+8. **Update opencode.json if needed**:
+   - Check if the targeted `opencode.json` exists.
    - If not, create it with the basic structure:
+
      ```json
      {
        "$schema": "https://opencode.ai/config.json"
      }
      ```
+
    - If the plugin requires being added to the config (check installation instructions), add it to the `plugin` array
    - Be very careful with JSON formatting - ensure valid JSON
 
-8. **Verify installation**:
+9. **Verify installation**:
    - List the files that were created/copied
    - Confirm success to the user
    - Remind the user: "Installation complete! Please restart OpenCode for changes to take effect."
 
 **Error handling**:
+
 - If network requests fail: "Failed to fetch plugin information. Please check your internet connection."
 - If plugin not found: "Plugin '$2' not found. Use `/plugin list` to see available plugins."
 - If git/npm commands fail: Show the error verbosely and explain what went wrong
@@ -91,7 +104,7 @@ Plugin name (if provided): **$2**
 
 ---
 
-### If $1 is "create":
+### If $1 is "create"
 
 **Goal**: Scaffold a new plugin with boilerplate code in the local project.
 
@@ -113,7 +126,7 @@ Plugin name (if provided): **$2**
      1. Tool plugin (TypeScript - adds custom tools for the agent)
      2. Command plugin (Markdown - adds custom slash commands)
      3. Both (tool + command)
-     
+
      Enter 1, 2, or 3:"
    - Wait for user input
 
@@ -124,6 +137,7 @@ Plugin name (if provided): **$2**
      - `.opencode/command/` (for command plugins)
 
 5. **For tool plugins** (option 1 or 3), create `.opencode/plugin/$2.ts`:
+
    ```typescript
    /**
     * $2 plugin for OpenCode
@@ -160,6 +174,7 @@ Plugin name (if provided): **$2**
    ```
 
 6. **For command plugins** (option 2 or 3), create `.opencode/command/$2.md`:
+
    ```markdown
    ---
    description: Description of what the /$2 command does
@@ -184,6 +199,7 @@ Plugin name (if provided): **$2**
    ```
 
 7. **Provide next steps to user**:
+
    ```
    ✅ Plugin scaffolded successfully!
 
@@ -204,13 +220,14 @@ Plugin name (if provided): **$2**
    ```
 
 **Error handling**:
+
 - If directory creation fails: "Failed to create directories. Please check file permissions."
 - If file write fails: Show verbose error with full path and system error message
 - Always provide clear, actionable error messages
 
 ---
 
-### If $1 is "remove":
+### If $1 is "remove"
 
 **Goal**: Remove an installed plugin from the local project.
 
@@ -233,6 +250,7 @@ Plugin name (if provided): **$2**
 
 4. **Show what will be removed**:
    - Display a clear list:
+
      ```
      The following files/directories will be removed:
      - .opencode/plugin/$2.ts
@@ -260,6 +278,7 @@ Plugin name (if provided): **$2**
    - If yes, remove the entry and save the file with proper JSON formatting
 
 8. **Report results**:
+
    ```
    ✅ Plugin '$2' removed successfully!
 
@@ -274,13 +293,14 @@ Plugin name (if provided): **$2**
    ```
 
 **Error handling**:
+
 - If file deletion fails: Show verbose error with file path and system error message
 - If opencode.json parsing fails: "Failed to parse opencode.json. Please update manually."
 - Always provide clear, actionable error messages
 
 ---
 
-### If $1 is "list":
+### If $1 is "list"
 
 **Goal**: List all available plugins in the marketplace.
 
@@ -294,6 +314,7 @@ Plugin name (if provided): **$2**
 
 3. **Display the list**:
    - Format as a readable table or list:
+
      ```
      Available OpenCode Plugins:
      
@@ -309,10 +330,12 @@ Plugin name (if provided): **$2**
      
      ...
      ```
+
    - Mark installable plugins with ⚡
    - Mark non-installable plugins with 📦
 
 4. **Provide usage hints**:
+
    ```
    To install a plugin: /plugin install <name>
    To create a new plugin: /plugin create <name>
@@ -321,12 +344,13 @@ Plugin name (if provided): **$2**
    ```
 
 **Error handling**:
+
 - If network request fails: "Failed to fetch plugin list. Please check your internet connection."
 - Show partial results if some plugins fail to load
 
 ---
 
-### If $1 is empty or unrecognized:
+### If $1 is empty or unrecognized
 
 Show usage information:
 
@@ -343,6 +367,7 @@ Subcommands:
 
 Examples:
   /plugin install opencode-context-analysis
+  /plugin install -g opencode-context-analysis (Global installation)
   /plugin create my-custom-plugin
   /plugin remove my-custom-plugin
   /plugin list
@@ -360,4 +385,4 @@ For more information: https://opencode.ai/plugins
 - **Provide clear feedback**: Show what was done, what files were affected
 - **Include next steps**: Tell the user what to do after the operation completes
 - **Handle network failures gracefully**: Provide helpful error messages
-- **Default to local installation**: Always use `.opencode/` in the current directory
+- **Default to local installation**: Use `.opencode/` in the current directory unless `-g` is specified.
